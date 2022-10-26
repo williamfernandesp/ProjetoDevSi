@@ -30,7 +30,11 @@
             Home
         </a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link active" href="./usuarios.php">
+            Usuários
+        </a>
+        </li>
       
 
       </ul>

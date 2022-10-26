@@ -3,9 +3,9 @@ $titulo = "Novo Usuário";
 include "cabecalho.php";
 
 if( isset($_POST) && !empty($_POST)) {
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
+    //echo "<pre>";
+    //print_r($_POST);
+    //echo "</pre>";
 
     $nome = $_POST["nome"];
     $senha = hash("sha512", $_POST["senha"]);
@@ -23,11 +23,8 @@ if( isset($_POST) && !empty($_POST)) {
     $resultado = mysqli_query($conexao,$query);
 
     if($resultado) {
-        ?>
-             <div class="alert alert-success">
-                 Cadastrado com sucesso.
-             </div>
-        <?php
+        header("Location: usuarios.php?sucesso=Cadastrado com sucesso");
+        exit();
     }else{
         ?>
             <div class="alert alert-danger">
